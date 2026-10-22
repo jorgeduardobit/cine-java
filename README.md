@@ -34,7 +34,7 @@ Regras já implementadas:
 
 ## Tecnologias
 
-- Java [21]
+- Java 21
 - Eclipse IDE
 
 ## Como executar
