@@ -13,7 +13,7 @@ Em desenvolvimento. As opções de cadastro já funcionam; listagem de filmes e 
 | Opção | Função | Situação |
 |-------|--------|----------|
 | 1 | Cadastrar filme (nome, gênero e classificação indicativa) | Pronto |
-| 2 | Cadastrar preços de inteira e meia para um filme | Em desenvolvimento |
+| 2 | Cadastrar preços de inteira e meia para um filme | Pronto |
 | 3 | Listar filmes | Em desenvolvimento |
 | 4 | Comprar ingressos | Em desenvolvimento |
 | 0 | Sair | Pronto |

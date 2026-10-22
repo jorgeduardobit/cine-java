@@ -70,28 +70,29 @@ public class CineJava {
 				System.out.println((i + 1) + " - " + nomes[i]);
 			}
 			
-			System.out.println("Escolha o filme: ");
-			int indice = scanner.nextInt();
+			System.out.print("Escolha o filme: ");
+			int indice = scanner.nextInt() -1;
 			
 			if (indice >= 0 && indice < quantidadeFilmes) {
 				
-				System.out.println("Preço da inteira: R$ ");
+				System.out.print("Preço da inteira: R$ ");
 				double inteira = scanner.nextDouble();
 				
-				System.out.println("Preço da meia: R$ ");
+				System.out.print("Preço da meia: R$ ");
 				double meia = scanner.nextDouble();
 				
-				if (inteira > 0 && meia <= inteira) {
+				if (inteira > 0 && meia <= inteira ) {
 					precosInteira[indice] = inteira;
 					precosMeia[indice] = meia;
 					
 					System.out.println("Preços cadastrados com sucesso!");
 				} else {
 					System.out.println("Preços inválidos!");
-					
-		
 				}
-			}
+				} else {
+					System.out.println("Filme inválido!");
+				}
+			
 			break;
 		
 		case 3:
