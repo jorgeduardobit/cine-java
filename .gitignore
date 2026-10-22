@@ -1,0 +1,8 @@
+﻿bin/
+.settings/
+*.class
+
+src/Main.java
+src/TiposDados.java
+src/exercicio1.java
+src/main.java
