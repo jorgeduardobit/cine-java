@@ -96,15 +96,92 @@ public class CineJava {
 			break;
 		
 		case 3:
-			System.out.println("Listar filmes");
+			System.out.println("=== FILMES CADASTRADOS ===");
+			
+			if (quantidadeFilmes == 0) {
+				System.out.println("Nenhum filme cadastrado.");
+			} else {
+				for (int i = 0; i < quantidadeFilmes; i++) {
+					
+					System.out.println("\nFilme " + (i+1));
+					System.out.println("Nome: " + nomes[i]);
+					System.out.println("Gênero :" + generos[i]);
+					System.out.println("Classificação: " + classificacoes[i] + " anos");
+					
+					if (precosInteira[i] > 0) {
+						System.out.printf("Inteira: R$ %.2f\n", precosInteira[i]);
+						System.out.printf("Meia entrada: R$ %.2f\n", precosMeia[i]);
+					} else {
+						System.out.println("Preço ainda não cadastrado");
+					}
+				}
+			}
+			
 			break;
 		
 		case 4:
-			System.out.println("Comprar ingresssos");
-			break;
+			if (quantidadeFilmes == 0) {
+				System.out.println("Cadastre um filme primeiro!");
+				break;
+			}
 			
+			System.out.println("\n=== COMPRAR INGRESSOS ===");
+			
+			for (int i = 0; i < quantidadeFilmes; i++) {
+				System.out.println((i + 1) + " - " + nomes[i]);
+			}
+			 System.out.println("Escolha o filme: ");
+			 int filmeEscolhido = scanner.nextInt() - 1;
+			 
+			 if (filmeEscolhido < 0 || filmeEscolhido > quantidadeFilmes) {
+				 System.out.println("Filme inválido");
+				 break;
+			 }
+			 
+			 if (precosInteira[filmeEscolhido] < 0) {
+				 System.out.println("Cadastre o preço do filme primeiro!");
+				 break;
+			 }
+			 
+			 System.out.println("1 - Inteira");
+			 System.out.println("2 - Meia entrada");
+			 System.out.print("Tipo de ingresso: ");
+			 
+			 int tipo = scanner.nextInt();
+			 double preco = 0;
+			 
+			 switch (tipo) {
+			 
+			 case 1:
+				 preco = precosInteira[filmeEscolhido];
+				 break;
+				 
+			 case 2:
+				 preco = precosMeia[filmeEscolhido];
+				 break;
+				 
+			default:
+				System.out.println("Tipo de ingresso inválido!");
+			 }
+			 
+			 if (preco > 0 ) {
+				 System.out.println("Quantidade de ingressos: ");
+				 int quantidade = scanner.nextInt();
+				 
+				 if (quantidade > 0) {
+					 double total = preco * quantidade;
+					 
+					 System.out.println("\n=== RESUMO DA COMPRA ===");
+					 System.out.println("Filme: " + nomes[filmeEscolhido]);
+					 System.out.println("Quantidade: " + quantidade);
+					 System.out.printf("Preço unitário: R$ %.2f%n", preco);
+					 System.out.printf("Total: R$ %.2f%n", total);
+				 }
+			 } 
+			break;  
 		case 0:
 			System.out.println("Saindo do sistema...");
+			break;
 			
 		default:
 			System.out.println("Opção inválida!");
