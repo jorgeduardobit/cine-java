@@ -1,12 +1,12 @@
 # Cine Java
 
-Sistema de console em Java que simula o cadastro de filmes e preços em um atendimento de cinema.
+Sistema de console em Java que simula o cadastro de filmes e preços e a venda de ingressos em um atendimento de cinema.
 
 > Projeto didático desenvolvido em sala de aula, em turma, como exercício da jornada de formação de tecnologia Transforma Futuros promovido pela Recode. Não tem intenção de uso real, serve apenas para fins de estudo.
 
 ## Status
 
-Em desenvolvimento. As opções de cadastro já funcionam; listagem de filmes e compra de ingressos ainda estão sendo implementadas.
+Concluído. Todas as opções do menu estão implementadas: cadastro de filmes e preços, listagem e compra de ingressos.
 
 ## Funcionalidades
 
@@ -14,23 +14,27 @@ Em desenvolvimento. As opções de cadastro já funcionam; listagem de filmes e 
 |-------|--------|----------|
 | 1 | Cadastrar filme (nome, gênero e classificação indicativa) | Pronto |
 | 2 | Cadastrar preços de inteira e meia para um filme | Pronto |
-| 3 | Listar filmes | Em desenvolvimento |
-| 4 | Comprar ingressos | Em desenvolvimento |
+| 3 | Listar filmes com classificação e preços | Pronto |
+| 4 | Comprar ingressos (inteira ou meia) com resumo da compra | Pronto |
 | 0 | Sair | Pronto |
 
-Regras já implementadas:
+Regras implementadas:
 
 - Limite de 10 filmes cadastrados
 - Só é possível cadastrar preços depois de cadastrar pelo menos um filme
 - O preço da inteira deve ser maior que zero e o da meia não pode ser maior que o da inteira
+- Filmes sem preço cadastrado aparecem na listagem como "Preço ainda não cadastrado"
+- A compra só é concluída para filmes que já têm preço, e a quantidade de ingressos deve ser maior que zero
+- O resumo da compra mostra filme, quantidade, preço unitário e total
 
 ## Conceitos praticados
 
 - Entrada de dados com `Scanner`
-- Menu com `do-while` e `switch`
+- Menu com `do-while` e `switch` (incluindo `switch` aninhado)
 - Vetores (arrays) paralelos para armazenar os dados dos filmes
 - Estruturas de repetição e condicionais
 - Validação de dados
+- Formatação de valores monetários com `printf`
 
 ## Tecnologias
 
@@ -53,7 +57,7 @@ javac CineJava.java
 java CineJava
 ```
 
-Observação: ao digitar preços, use vírgula como separador decimal (ex: `25,50`).
+Observação: o separador decimal depende do idioma do sistema (em português, use vírgula).
 
 ## Exemplo de uso
 
@@ -66,6 +70,21 @@ Observação: ao digitar preços, use vírgula como separador decimal (ex: `25,5
 0 - Sair
 Escolha uma opção:
 ```
+
+Exemplo de resumo de compra:
+
+```
+=== RESUMO DA COMPRA ===
+Filme: Nome do filme
+Quantidade: 2
+Preço unitário: R$ 30,00
+Total: R$ 60,00
+```
+
+## Possíveis melhorias
+
+- Salvar os dados em arquivo ou banco de dados para não perder os filmes ao fechar o programa
+- Tratamento de entradas inválidas (por exemplo, letras no lugar de números)
 
 ## Créditos
 
